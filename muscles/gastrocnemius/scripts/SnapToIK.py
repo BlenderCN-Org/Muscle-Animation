@@ -23,5 +23,5 @@ for bone in armature.bones:
     if ik_id in bone.name:
         ik_name = bone.name[:fk_start] + "ik" + bone.name[fk_start+2:]
         ik_bone = armature.bones[ik_name]
-        bpy.ops.pose.visual_transform_apply()
+        bpy.context.scene.update()
         bone.matrix = ik_bone.matrix
